@@ -1,0 +1,23 @@
+// Low level basics for our entire project
+
+/* Basic reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* Now 1rem = 10px */
+  /* font-size: 10px; */
+
+  /* We want 10px. Default is 16px. So we want 10/16 = 62.5% */
+  // This defines what 1rem is, essentially!
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

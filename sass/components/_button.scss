@@ -1,0 +1,102 @@
+/* Our Button is actually an anchor element */
+.btn {
+  &:link,
+  &:visited {
+    font-size: $font-size-default;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s ease-out;
+
+    /* So we can palce ::after relative to this */
+    position: relative;
+  }
+
+  /* When Button is beign hovered */
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &:after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* When Button is clicked */
+  &:active {
+    transform: translateY(-1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    padding: 1.5rem 4rem;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 1.5rem 4rem;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    /* Treated like a child of the btn, so 100% size of the btn */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+
+    /* Place this behind oru btn */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: fadeInBottom 0.5s ease-out 0.75s;
+
+    /* Applies the styles of the animation's 0% keyframe before the animation starts
+  this is much better than placing those styles in the button's default position, which we'd rather
+  have represent the position the button wishes to be after the animation finishes -- not when it starts  */
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $font-size-default;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 0.1rem solid $color-primary;
+    padding: 0.3rem;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1em rgba($color-black, 0.15);
+    transform: translateY(0);
+  }
+}

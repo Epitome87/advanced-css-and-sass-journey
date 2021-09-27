@@ -1,0 +1,23 @@
+// Abstracts styles
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+// Base styles
+@import 'base/base';
+@import 'base/animations';
+@import 'base/typography';
+@import 'base/utilities';
+
+// Component styles
+@import 'components/button';
+@import 'components/card';
+@import 'components/composition';
+@import 'components/feature-box';
+
+// Layout styles
+@import 'layout/header';
+@import 'layout/grid';
+
+// Pages styles
+@import 'pages/home';
