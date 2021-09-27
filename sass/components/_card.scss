@@ -14,7 +14,7 @@
     transition: all 0.8s ease-out;
 
     border-radius: 0.3rem;
-    
+
     // Prevent the child image from overflowing and hiding the rounded borders
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
@@ -123,22 +123,22 @@
         rgba($color-secondary-light, 0.85),
         rgba($color-secondary-dark, 0.85)
       );
+    }
 
-      &--2 {
-        background-image: linear-gradient(
-          to bottom right,
-          rgba($color-primary-light, 0.85),
-          rgba($color-primary-dark, 0.85)
-        );
-      }
+    &--2 {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
 
-      &--3 {
-        background-image: linear-gradient(
-          to bottom right,
-          rgba($color-tertiary-light, 0.85),
-          rgba($color-tertiary-dark, 0.85)
-        );
-      }
+    &--3 {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
     }
   }
 

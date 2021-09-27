@@ -136,10 +136,6 @@
       </section>
 
       <section class="section-tours">
-        <div class="u-center-text u-margin-bottom-big">
-          <h2 class="heading-secondary">Most popular tours</h2>
-        </div>
-
         <div class="row">
           <div class="col-1-of-3">
             <div class="card">
@@ -242,6 +238,15 @@
       </section>
 
       <section class="section-stories">
+        <!-- The background video -->
+        <div class="bg-video">
+          <video class="bg-video__content" autoplay muted loop>
+            <source src="img/video.mp4" type="video/mp4" />
+            <source src="img/video.webm" type="video/webm" />
+            Your browser is not supported
+          </video>
+        </div>
+
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">We make people genuinely happy</h2>
         </div>
@@ -300,6 +305,42 @@
           <!-- Read All Stories Button -->
           <div class="u-center-text u-margin-top-huge">
             <a href="#" class="btn-text">Read all stories &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section for Booking information -->
+      <section class="section-book">
+        <div class="row">
+          <div class="book">
+            <div class="book__form">
+              <!-- The actual form -- will be styled in a reusable component -->
+              <form action="#" class="form">
+                <div class="u-margin-bottom-medium">
+                  <h2 class="heading-secondary">Start booking now</h2>
+                </div>
+                <div class="form__group">
+                  <input
+                    class="form__input"
+                    id="name"
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                  />
+                  <label class="form__label" for="name"> Full Name </label>
+                </div>
+                <div class="form__group">
+                  <input
+                    class="form__input"
+                    id="email"
+                    type="email"
+                    placeholder="Email address"
+                    required
+                  />
+                  <label class="form__label" for="email"> Email address </label>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>

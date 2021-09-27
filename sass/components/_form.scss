@@ -1,0 +1,60 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    // By default, input doesn't inherit font family, or color
+    font-family: inherit;
+    color: inherit;
+
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+
+    // We give the input's non-focused state the same border as its focused state
+    // but make it transparent. This is to negate the vertical pushing of elements
+    // that occurs when an input is focused and its border adds extra space to the page
+    border-bottom: 3px solid transparent;
+
+    width: 90%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      //   For accessibility purposes, never set outline to none WITHOUT compensating...
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 0.3rem solid $color-primary;
+
+      &:invalid {
+        border-bottom: 0.3rem solid $color-secondary-dark;
+      }
+    }
+
+    // DO NOT comma separate things like -webkit-input-placeholder and ::placeholder. Have to define each one separate
+    &::placeholder {
+      color: $color-grey-dark-2;
+    }
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  //   When placeholder is shown (we've written nothing in input): Label has to be after input for this -- not label first
+  &__input:placeholder-shown + &__label {
+    opacity: 0; // Element still on page
+    visibility: hidden; // Element actually removed  -- Why not just use visibility without opacity? Need opacity for animation!
+    transform: translateY(-4rem);
+  }
+}
