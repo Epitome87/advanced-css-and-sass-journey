@@ -79,7 +79,7 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #8fc1e3, #31708e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -100,22 +100,22 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 .bg-video {
   position: absolute;
@@ -135,7 +135,7 @@ body {
 .btn {
   /* When Button is beign hovered */
   /* When Button is clicked */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     font-size: 1.6rem;
     text-transform: uppercase;
     text-decoration: none;
@@ -143,14 +143,17 @@ body {
     border-radius: 10rem;
     transition: all 0.2s ease-out;
     /* So we can palce ::after relative to this */
-    position: relative; }
+    position: relative;
+    border: none;
+    cursor: pointer; }
   .btn:hover {
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
     .btn:hover:after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     transform: translateY(-1rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn--white {
@@ -160,11 +163,11 @@ body {
     .btn--white::after {
       background-color: #fff; }
   .btn--green {
-    background-color: #55c57a;
+    background-color: #5085a5;
     color: #fff;
     padding: 1.5rem 4rem; }
     .btn--green::after {
-      background-color: #55c57a; }
+      background-color: #5085a5; }
   .btn::after {
     content: '';
     display: inline-block;
@@ -187,15 +190,15 @@ body {
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
-  color: #55c57a;
+  color: #5085a5;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 0.1rem solid #55c57a;
+  border-bottom: 0.1rem solid #5085a5;
   padding: 0.3rem 1rem;
   transition: all 0.2s; }
 
 .btn-text:hover {
-  background-color: #55c57a;
+  background-color: #5085a5;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-0.2rem); }
@@ -225,9 +228,9 @@ body {
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
       .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+        background-image: linear-gradient(to right bottom, #8fc1e3, #31708e); }
       .card__side--back-3 {
-        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+        background-image: linear-gradient(to right bottom, #7ed56f, #27b485); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -243,9 +246,9 @@ body {
     .card__picture--1 {
       background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url(../img/nat-5.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to bottom right, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+      background-image: linear-gradient(to bottom right, #8fc1e3, #31708e), url(../img/nat-6.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to bottom right, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+      background-image: linear-gradient(to bottom right, #7ed56f, #27b485), url(../img/nat-7.jpg); }
   .card__heading {
     position: absolute;
     width: 75%;
@@ -263,9 +266,9 @@ body {
     .card__heading-span--1 {
       background-image: linear-gradient(to bottom right, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
     .card__heading-span--2 {
-      background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+      background-image: linear-gradient(to bottom right, rgba(143, 193, 227, 0.85), rgba(49, 112, 142, 0.85)); }
     .card__heading-span--3 {
-      background-image: linear-gradient(to bottom right, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+      background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.85), rgba(39, 180, 133, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -315,7 +318,7 @@ body {
       left: 20%;
       top: 10rem; }
     .composition__photo:hover {
-      outline: 0.75rem solid #55c57a;
+      outline: 0.75rem solid #5085a5;
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 20; }
@@ -334,7 +337,7 @@ body {
     font-size: 6rem;
     margin-bottom: 0.5rem;
     display: inline-block;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-image: linear-gradient(to right, #8fc1e3, #31708e);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; }
@@ -354,11 +357,12 @@ body {
   border: none;
   border-bottom: 3px solid transparent;
   width: 90%;
-  display: block; }
+  display: block;
+  transition: all 0.3s; }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-    border-bottom: 0.3rem solid #55c57a; }
+    border-bottom: 0.3rem solid #5085a5; }
     .form__input:focus:invalid {
       border-bottom: 0.3rem solid #ff7730; }
   .form__input::placeholder {
@@ -378,6 +382,45 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  border: 0.5rem solid #5085a5;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.4rem;
+  left: 0; }
+  .form__radio-button::after {
+    content: '';
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5085a5;
+    opacity: 0;
+    transition: opacity 0.2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .story {
   width: 75%;
@@ -430,7 +473,7 @@ body {
   position: relative;
   height: 95vh;
   /* Background has a semi-transparent gradient on top of an image  */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(143, 193, 227, 0.8), rgba(49, 112, 142, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   /* Remove a bottom slice from the background */
@@ -481,7 +524,7 @@ body {
 
 .section-features {
   padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(143, 193, 227, 0.8), rgba(49, 112, 142, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -10rem; }
@@ -499,14 +542,13 @@ body {
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  background-image: linear-gradient(to right bottom, #8fc1e3, #31708e); }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 51%), url(../img/nat-10.jpg);
   background-size: cover;
   border-radius: 0.3rem;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
-  height: 50rem; }
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
   .book__form {
     width: 50%;
     padding: 6rem; }

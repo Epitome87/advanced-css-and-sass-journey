@@ -21,6 +21,7 @@
 
     width: 90%;
     display: block;
+    transition: all 0.3s;
 
     &:focus {
       outline: none;
@@ -56,5 +57,53 @@
     opacity: 0; // Element still on page
     visibility: hidden; // Element actually removed  -- Why not just use visibility without opacity? Need opacity for animation!
     transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  // We want to hide the default radio input, so we can show only our custom one
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: $font-size-default;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem; // Space away from our custom radio button
+  }
+
+  &__radio-button {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 0.5rem solid $color-primary;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.4rem;
+    left: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  // Get the checked input's label sibling, and then that label's child button::after
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
   }
 }
