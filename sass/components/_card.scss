@@ -1,6 +1,6 @@
 .card {
   // Functionality
-  //   perspective: 150rem;
+  perspective: 150rem;
   position: relative;
   height: 52rem;
 
@@ -164,11 +164,8 @@
 
   //   Back-side styling
   &__call-to-action {
-    position: absolute;
+    @include center-horizontal-vertical;
     width: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
   }
 
