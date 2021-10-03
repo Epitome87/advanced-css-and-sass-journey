@@ -23,7 +23,9 @@
         class="navigation__checkbox"
         id="navigation-toggle"
       />
-      <label for="navigation-toggle" class="navigation__button">MENU</label>
+      <label for="navigation-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
 
       <div class="navigation__background">&nbsp;</div>
 
@@ -66,7 +68,9 @@
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
 
-        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >Discover our tours</a
+        >
       </div>
     </header>
 
@@ -177,7 +181,7 @@
       </section>
 
       <!-- Section: "Tours" -->
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="row">
           <div class="col-1-of-3">
             <div class="card">
@@ -204,7 +208,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$297</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now</a>
+                  <a href="#popup" class="btn btn--white">Book Now</a>
                 </div>
               </div>
             </div>
@@ -235,7 +239,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$497</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now</a>
+                  <a href="#popup" class="btn btn--white">Book Now</a>
                 </div>
               </div>
             </div>
@@ -266,7 +270,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$897</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now</a>
+                  <a href="#popup" class="btn btn--white">Book Now</a>
                 </div>
               </div>
             </div>
@@ -469,5 +473,44 @@
         </div>
       </div>
     </footer>
+
+    <!-- Popup Modal -->
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Please read these terms before booking
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
+            vero excepturi, saepe accusantium officia rerum minima harum, ipsum
+            quidem non accusamus veniam nisi hic doloremque? Nesciunt magni ipsa
+            deleniti illum tempore unde facilis non cum minima officia nam rem
+            vel, nisi ad autem expedita quidem ex quisquam deserunt dicta.
+            Molestias corrupti minus facilis numquam vero voluptatem dolore
+            voluptatum, neque laboriosam incidunt explicabo nulla saepe.
+            Voluptate nemo laborum eius, assumenda, hic corporis blanditiis
+            laudantium nulla sed earum obcaecati iure corrupti. Rem architecto
+            unde voluptates dicta dolorem ducimus laudantium vitae officiis cum
+            sequi, pariatur, magnam mollitia laboriosam nihil culpa quidem animi
+            repudiandae fugit iusto aspernatur facere assumenda aliquid quasi
+            cupiditate. Eius vero, repudiandae delectus aspernatur eos atque?
+            Laborum, amet earum praesentium libero perspiciatis exercitationem
+            maiores nostrum dolore labore atque qui ullam eligendi nemo eius cum
+            magnam soluta voluptatem sint ex rerum enim incidunt. Voluptates,
+            quisquam! Temporibus iusto laborum necessitatibus quia et dolorum!
+          </p>
+          <a href="#" class="btn btn--green">Book now!</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
