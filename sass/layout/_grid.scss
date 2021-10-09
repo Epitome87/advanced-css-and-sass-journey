@@ -4,6 +4,18 @@
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    // At this point (900px) and lower, ensure vertical gutter size is reduced
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  // At < 900px, we don't want a row to occupy 100% of body -- reduce it!
+  // Also need to start adding horizontal padding
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   @include clearfix;
@@ -14,6 +26,18 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      // At this point (900px) and lower, we don't need horizontal gutters (columns are on their own block)
+      // But we now need vertical gutters, at reduced size
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    // At this point (900px) and lower, ensure columns take up 100% width
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

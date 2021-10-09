@@ -9,12 +9,24 @@
   font-size: $font-size-default;
   transform: skewX(-12deg);
 
+  // Increase width, decrease padding
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  // Remove skewed shape at phone size
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     // Seems to fix bug where image bleeds out of circular corners when animating the filter effects
     overflow: hidden;
 
     // To position the caption relative (in center)
-    position: relative;
+    position: relative; 
 
     width: 15rem;
     height: 15rem;
@@ -28,6 +40,11 @@
 
     // Use transform instead of margins - best way to move a floated element
     transform: translateX(-3rem) skewX(12deg);
+
+    // At smaller sizes, remove the skew efect
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -39,6 +56,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {
