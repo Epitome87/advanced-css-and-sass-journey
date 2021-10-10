@@ -106,16 +106,24 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
-                src="img/nat-1-large.jpg"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="Photo 1"
+                src="img/nat-1-large.jpg"
                 class="composition__photo composition__photo--p1"
-              /><img
-                src="img/nat-2-large.jpg"
+              />
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="Photo 2"
+                src="img/nat-2-large.jpg"
                 class="composition__photo composition__photo--p2"
-              /><img
-                src="img/nat-3-large.jpg"
+              />
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="Photo 3"
+                src="img/nat-3-large.jpg"
                 class="composition__photo composition__photo--p3"
               />
             </div>
@@ -182,6 +190,9 @@
 
       <!-- Section: "Tours" -->
       <section class="section-tours" id="section-tours">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Most Popular Tours</h2>
+        </div>
         <div class="row">
           <div class="col-1-of-3">
             <div class="card">
@@ -432,11 +443,20 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer__logo-container">
-        <img
-          src="img/logo-green-2x.png"
-          alt="Natours full logo"
-          class="footer__logo"
-        />
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+            src="img/logo-green-small-2x.png"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Natours full logo"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">

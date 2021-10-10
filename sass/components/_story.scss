@@ -26,20 +26,29 @@
     overflow: hidden;
 
     // To position the caption relative (in center)
-    position: relative; 
+    position: relative;
 
     width: 15rem;
     height: 15rem;
     // Float left so the text can float around it
     // Must be floated and have width and height to use shape-outside!
     float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    // -webkit-shape-outside: circle(50% at 50% 50%);
+    // shape-outside: circle(50% at 50% 50%);
+    // -webkit-clip-path: circle(50% at 50% 50%);
+    // clip-path: circle(50% at 50% 50%);
+    border-radius: 50%;
 
     // Use transform instead of margins - best way to move a floated element
     transform: translateX(-3rem) skewX(12deg);
+
+    // Must put the argument polygon, but its arguments can be anything
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
 
     // At smaller sizes, remove the skew efect
     @include respond(phone) {

@@ -9,6 +9,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    --webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     height: 52rem;
     transition: all 0.8s ease-out;

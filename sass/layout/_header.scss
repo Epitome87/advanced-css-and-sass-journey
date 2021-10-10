@@ -8,11 +8,33 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   /* Remove a bottom slice from the background */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // Must put the argument polygon, but its arguments can be anything
+  @supports not (
+    (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0))
+  ) {
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 85vh;
+  }
+
+  // Load the higher-res hero image on higher density screens IF the w idth is at least 600px (at smaller than that, we don't really need high res version)
+  // ALso appy it if width of any screen density type is above 2000px
+  // Note: The webkit version is for Safari support
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
 
   // At lower screen size, our clip angle was becoming too high; reduce it!
   @include respond(phone) {
